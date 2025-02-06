@@ -54,9 +54,9 @@ public class sym {
   static final int LET = 36;
   static final int THEN = 30;
   static final int EQ = 19;
-  static final int CHAR = 2;
-  static final int FUN = 4;
-  static final int INT_LITERAL = 6;
-  static final int CHAR_LITERAL = 7;
-  static final int STRING_LITERAL = 8;
+  static final int CHAR = 44;
+  static final int FUN = 45;
+  static final int INT_LITERAL = 46;
+  static final int CHAR_LITERAL = 47;
+  static final int STRING_LITERAL = 48;
 };

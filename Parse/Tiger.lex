@@ -49,27 +49,36 @@ Yylex(java.io.InputStream s, ErrorMsg e) {
 " "	{}
 \n	{newline();}
 ","	{return tok(sym.COMMA, null);}
+
+/* Keywords */
 int { return tok(sym.INT, null); }
 char { return tok(sym.CHAR, null); }
 var { return tok(sym.VAR, null); }
 fun { return tok(sym.FUN, null); }
+
+/* Identifiers */
 [a-zA-Z_][a-zA-Z0-9_]* {return tok(sym.ID, yytext()); }
+
+/* Operators */
 "=" { return tok(sym.ASSIGN, null); }
 "==" { return tok(sym.EQ, null); }
 "+" { return tok(sym.PLUS, null); }
-"-" { return tok(syn.MINUS, null); }
+"-" { return tok(sym.MINUS, null); }
 "*" { return tok(sym.TIMES, null); }
 "/" { return tok(sym.DIVIDE, null); }
 "&&" { return tok(sym.AND, null); }
 "||" { return tok(sym.OR, null); }
+
+/* Punctuators */
 "(" { return tok(sym.LPAREN, null); }
 ")" { return tok(sym.RPAREN, null); }
-[0-9]+ { return tok(sym.INT_LITERAL, Integer.parseInt(yytext())); }
-'([^'\\]|\\[ntbrf'\\])' { return tok(sym.CHAR_LETERAL, yytext()); }
-\"([^\"\\]|\\[ntbrf\"\\])*\" { return tok(sym.STRING_LITERAL, yytext()); }
-"//".* { /* Skip single-line comments */ }
-"/*"([^*]|"*"[^/])*"*/" { /* Skip multi-line comments */ }
-[ \t\r]+ { /* Skip whitespaces */ }
-\n { newline(); }
 
-. { err("Illegal character: " + yytext()); }
+/* Literals */
+[0-9]+ { return tok(sym.INT_LITERAL, Integer.parseInt(yytext())); }
+'([^'\\]|\\[ntbrf'\\])' { return tok(sym.CHAR_LITERAL, yytext()); }
+\"([^\"\\]|\\[ntbrf\"'\\\\])*\" { return tok(sym.STRING_LITERAL, yytext()); }
+"//".* { /* Skip single-line comments */ }
+"/*"([^*]|[*][^/])*"*/" { /* Skip multi-line comments */ }
+[ \t\r]+ { /* Skip whitespaces */ }
+
+. { err("Illegal character: " + yytext()); return tok(sym.error, null); }
