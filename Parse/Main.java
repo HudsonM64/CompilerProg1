@@ -58,7 +58,6 @@ public class Main {
      symnames[sym.END] = "END";
      symnames[sym.ASSIGN] = "ASSIGN";
      symnames[sym.STRING] = "STRING";
-     symnames[sym.DOT] = "DOT";
      symnames[sym.LPAREN] = "LPAREN";
      symnames[sym.RPAREN] = "RPAREN";
      symnames[sym.IF] = "IF";
@@ -85,7 +84,7 @@ public class Main {
      symnames[sym.PERIOD] = "PERIOD";
      symnames[sym.REGISTER] = "REGISTER";
      symnames[sym.ENUM] = "ENUM";
-     symnames[sym.SIZEOF] = "ENUM";
+     symnames[sym.SIZEOF] = "SIZEOF";
      symnames[sym.INCREMENT] = "INCREMENT";
      symnames[sym.SUBASSIGN] = "SUBASSIGN";
      symnames[sym.AUTO] = "AUTO";
@@ -97,6 +96,7 @@ public class Main {
      symnames[sym.CHAR_LITERAL] = "CHAR_LITERAL";
      symnames[sym.VOLATILE] = "VOLATILE";
      symnames[sym.RSHIFTASSIGN] = "RSHIFTASSIGN";
+     symnames[sym.LSHIFTASSIGN] = "LSHIFTASSIGN";
      symnames[sym.BWISEORASSIGN] = "BWISEORASSIGN";
      symnames[sym.BWISEXOR] = "BWISEXOR";
      symnames[sym.UNSIGNED] = "UNSIGNED";
@@ -128,7 +128,10 @@ public class Main {
      symnames[sym.MODULUS] = "MODULUS";
      symnames[sym.MODASSIGN] = "MODASSIGN";
      symnames[sym.BWISEANDASSIGN] = "BWISEANDASSIGN";
-     symnames[sym.BWISENOT] = "BWISENOT";
+     symnames[sym.TILDE] = "TILDE";
+     symnames[sym.NOT] = "NOT";
+     symnames[sym.COPERATOR] = "COPERATOR";
+     symnames[sym.TOKENOPERATOR] = "TOKENOPERATOR";
    }
 
 }

@@ -98,12 +98,13 @@ public class sym {
   static final int IN = 88;
   static final int END = 89;
   static final int STRING = 90;
-  static final int DOT = 91;
   static final int LET = 92;
   static final int THEN = 93;
   static final int SWITCH = 94;
   static final int CASE = 95;
   static final int DEFAULT = 96;
   static final int POUND = 97;
-  static final int BWISENOT = 98;
+  static final int NOT = 98;
+  static final int COPERATOR = 99;
+  static final int TOKENOPERATOR = 91;
 }

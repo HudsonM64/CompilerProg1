@@ -82,6 +82,8 @@ volatile {return tok(sym.VOLATILE, null);}
 do {return tok(sym.DO, null);}
 if {return tok(sym.IF, null);}
 while {return tok(sym.WHILE, null);}
+static {return tok(sym.STATIC, null);}
+
 
 
 
@@ -95,7 +97,7 @@ while {return tok(sym.WHILE, null);}
 "]" {return tok(sym.RBRACK, null);}
 "{" {return tok(sym.LBRACE, null);}
 "}" {return tok(sym.RBRACE, null);}
-"." {return tok(sym.DOT, null);}
+"." {return tok(sym.PERIOD, null);}
 ","	{return tok(sym.COMMA, null);}
 ":" {return tok(sym.COLON, null);}
 ";" {return tok(sym.SEMICOLON, null);}
@@ -118,7 +120,7 @@ while {return tok(sym.WHILE, null);}
 "++" {return tok(sym.INCREMENT, null);}
 "--" {return tok(sym.DECREMENT, null);}
 "&" {return tok(sym.BITWISEAND, null);}
-"~" {return tok(sym.BWISENOT, null);}
+"~" {return tok(sym.TILDE, null);}
 "sizeof" {return tok(sym.SIZEOF, null);}
 "%" {return tok(sym.MODULUS, null);}
 "<<" {return tok(sym.LSHIFT, null);}
@@ -136,6 +138,9 @@ while {return tok(sym.WHILE, null);}
 "&=" {return tok(sym.BWISEANDASSIGN, null);}
 "^=" {return tok(sym.BWISEXORASSIGN, null);}
 "|=" {return tok(sym.BWISEORASSIGN, null);}
-
+"->" {return tok(sym.ARROW, null);}
+"?" {return tok(sym.COPERATOR, null);}
+":" {return tok(sym.COLON, null);}
+"##" {return tok(sym.TOKENOPERATOR, null);}
 
 . { err("Illegal character: " + yytext()); }
