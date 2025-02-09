@@ -49,6 +49,10 @@ Yylex(java.io.InputStream s, ErrorMsg e) {
 " "	{}
 \n	{newline();}
 
+"/*"([^*] | \*+[^*/])*\*+"/"  { /* Ignore block comments */ }
+"//".*                        { /* Ignore single-line comments */ }
+
+
 int {return tok(sym.INT, null);}
 char {return tok(sym.CHAR, null);}
 var {return tok(sym.VAR, null);}
@@ -99,7 +103,6 @@ static {return tok(sym.STATIC, null);}
 "}" {return tok(sym.RBRACE, null);}
 "." {return tok(sym.PERIOD, null);}
 ","	{return tok(sym.COMMA, null);}
-":" {return tok(sym.COLON, null);}
 ";" {return tok(sym.SEMICOLON, null);}
 "+" {return tok(sym.PLUS, null);}
 "-" {return tok(sym.MINUS, null);}
@@ -115,7 +118,8 @@ static {return tok(sym.STATIC, null);}
 "&&" {return tok(sym.AND, null);}
 "||" {return tok(sym.OR, null);}
 ":=" {return tok(sym.ASSIGN, null);}
-"..." {return tok(sym.ELIPSES, null);}
+":" {return tok(sym.COLON, null);}
+"..." {return tok(sym.ELLIPSES, null);}
 "#" {return tok(sym.POUND, null);}
 "++" {return tok(sym.INCREMENT, null);}
 "--" {return tok(sym.DECREMENT, null);}
@@ -142,5 +146,12 @@ static {return tok(sym.STATIC, null);}
 "?" {return tok(sym.COPERATOR, null);}
 ":" {return tok(sym.COLON, null);}
 "##" {return tok(sym.TOKENOPERATOR, null);}
+
+/* CHAR_LITERAL */
+'([^'\\]|\\[ntbrf'\\]|\\u[0-9A-Fa-f]{4})' { return tok(sym.CHAR_LITERAL, yytext()); }
+
+/* STRING_LITERAL */
+\"([^\"\\]|\\[ntbrf\"\\]|\\u[0-9A-Fa-f]{4})*\" { return tok(sym.STRING_LITERAL, yytext()); }
+
 
 . { err("Illegal character: " + yytext()); }

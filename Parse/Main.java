@@ -103,7 +103,6 @@ public class Main {
      symnames[sym.BWISEOR] = "BWISEOR";
      symnames[sym.CONTINUE] = "CONTINUE";
      symnames[sym.DECIMAL_LITERAL] = "DECIMAL_LITERAL";
-     symnames[sym.error] = "error";
      symnames[sym.DECREMENT] = "DECREMENT";
      symnames[sym.ELIPSES] = "ELIPSES";
      symnames[sym.MULASSIGN] = "MULASSIGN";
