@@ -3,6 +3,7 @@ import java.io.PrintWriter;
 
 public class Main {
 
+//test
   public static void main(String argv[]) throws java.io.IOException {
     for (int i = 0; i < argv.length; ++i) {
       String filename = argv[i];
@@ -57,7 +58,6 @@ public class Main {
      symnames[sym.END] = "END";
      symnames[sym.ASSIGN] = "ASSIGN";
      symnames[sym.STRING] = "STRING";
-     symnames[sym.DOT] = "DOT";
      symnames[sym.LPAREN] = "LPAREN";
      symnames[sym.RPAREN] = "RPAREN";
      symnames[sym.IF] = "IF";
@@ -76,6 +76,62 @@ public class Main {
      symnames[sym.LET] = "LET";
      symnames[sym.THEN] = "THEN";
      symnames[sym.EQ] = "EQ";
+     symnames[sym.SHORT] = "SHORT";
+     symnames[sym.SIGNED] = "SIGNED";
+     symnames[sym.ARROW] = "ARROW";
+     symnames[sym.DIVASSIGN] = "DIVASSIGN";
+     symnames[sym.CONST] = "CONST";
+     symnames[sym.PERIOD] = "PERIOD";
+     symnames[sym.REGISTER] = "REGISTER";
+     symnames[sym.ENUM] = "ENUM";
+     symnames[sym.SIZEOF] = "SIZEOF";
+     symnames[sym.INCREMENT] = "INCREMENT";
+     symnames[sym.SUBASSIGN] = "SUBASSIGN";
+     symnames[sym.AUTO] = "AUTO";
+     symnames[sym.TYPEDEF] = "TYPEDEF";
+     symnames[sym.LSHIFT] = "LSHIFT";
+     symnames[sym.STATIC] = "STATIC";
+     symnames[sym.BWISEXORASSIGN] = "BWISEXORASSIGN";
+     symnames[sym.RSHIFT] = "RSHIFT";
+     symnames[sym.CHAR_LITERAL] = "CHAR_LITERAL";
+     symnames[sym.VOLATILE] = "VOLATILE";
+     symnames[sym.RSHIFTASSIGN] = "RSHIFTASSIGN";
+     symnames[sym.LSHIFTASSIGN] = "LSHIFTASSIGN";
+     symnames[sym.BWISEORASSIGN] = "BWISEORASSIGN";
+     symnames[sym.BWISEXOR] = "BWISEXOR";
+     symnames[sym.UNSIGNED] = "UNSIGNED";
+     symnames[sym.BWISEOR] = "BWISEOR";
+     symnames[sym.CONTINUE] = "CONTINUE";
+     symnames[sym.DECIMAL_LITERAL] = "DECIMAL_LITERAL";
+     symnames[sym.error] = "error";
+     symnames[sym.DECREMENT] = "DECREMENT";
+     symnames[sym.ELIPSES] = "ELIPSES";
+     symnames[sym.MULASSIGN] = "MULASSIGN";
+     symnames[sym.STRING_LITERAL] = "STRING_LITERAL";
+     symnames[sym.FUN] = "FUN";
+     symnames[sym.RETURN] = "RETURN";
+     symnames[sym.VOID] = "VOID";
+     symnames[sym.ADDASSIGN] = "ADDASSIGN";
+     symnames[sym.CHAR] = "CHAR";
+     symnames[sym.EXTERN] = "EXTERN";
+     symnames[sym.DOUBLE] = "DOUBLE";
+     symnames[sym.LONG] = "LONG";
+     symnames[sym.SWITCH] = "SWITCH";
+     symnames[sym.CASE] = "CASE";
+     symnames[sym.UNION] = "UNION";
+     symnames[sym.FLOAT] = "FLOAT";
+     symnames[sym.DEFAULT] = "DEFAULT";
+     symnames[sym.GOTO] = "GOTO";
+     symnames[sym.STRUCT] = "STRUCT";
+     symnames[sym.POUND] = "POUND";
+     symnames[sym.BITWISEAND] = "BITWISEAND";
+     symnames[sym.MODULUS] = "MODULUS";
+     symnames[sym.MODASSIGN] = "MODASSIGN";
+     symnames[sym.BWISEANDASSIGN] = "BWISEANDASSIGN";
+     symnames[sym.TILDE] = "TILDE";
+     symnames[sym.NOT] = "NOT";
+     symnames[sym.COPERATOR] = "COPERATOR";
+     symnames[sym.TOKENOPERATOR] = "TOKENOPERATOR";
    }
 
 }
