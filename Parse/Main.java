@@ -8,21 +8,21 @@ public class Main {
     for (int i = 0; i < argv.length; ++i) {
       String filename = argv[i];
       if (argv.length > 1)
-	System.out.println("***Processing: " + filename);
+	      System.out.println("***Processing: " + filename);
       ErrorMsg.ErrorMsg errorMsg = new ErrorMsg.ErrorMsg(filename);
       java.io.InputStream inp=new java.io.FileInputStream(filename);
       Lexer lexer = new Yylex(inp,errorMsg);
       java_cup.runtime.Symbol tok;
 
       do {
-	 String extra = "";
-         tok=lexer.nextToken();
-	 switch (tok.sym) {
-	 case sym.ID:     extra = "\t$" + tok.value; break;
-	 case sym.INT:    extra = "\t#" + tok.value; break;
-	 case sym.STRING: extra = " \"" + tok.value + "\""; break;
+	        String extra = "";
+          tok=lexer.nextToken();
+	        switch (tok.sym) {
+	        case sym.ID:     extra = "\t$" + tok.value; break;
+	        case sym.INT:    extra = "\t#" + tok.value; break;
+	        case sym.STRING: extra = " \"" + tok.value + "\""; break;
 	 }
-	 System.out.println(symnames[tok.sym] + " " + tok.left + extra);
+	      System.out.println(symnames[tok.sym] + " " + tok.left + extra);
       } while (tok.sym != sym.EOF);
 
       inp.close();
@@ -76,7 +76,7 @@ public class Main {
      symnames[sym.LET] = "LET";
      symnames[sym.THEN] = "THEN";
      symnames[sym.EQ] = "EQ";
-     symnames[sym.SHORT] = "SHORT";
+     /*symnames[sym.SHORT] = "SHORT";
      symnames[sym.SIGNED] = "SIGNED";
      symnames[sym.ARROW] = "ARROW";
      symnames[sym.DIVASSIGN] = "DIVASSIGN";
@@ -130,7 +130,7 @@ public class Main {
      symnames[sym.TILDE] = "TILDE";
      symnames[sym.NOT] = "NOT";
      symnames[sym.COPERATOR] = "COPERATOR";
-     symnames[sym.TOKENOPERATOR] = "TOKENOPERATOR";
+     symnames[sym.TOKENOPERATOR] = "TOKENOPERATOR";*/
    }
 
 }
